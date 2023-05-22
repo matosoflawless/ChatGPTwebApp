@@ -1,8 +1,17 @@
 .responsive-image {
-    max-width: 100%;
+    max-width: 60%;
     height: auto;
   }
   
+  .cart-panel {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
   .card-list {
     list-style-type: none;
     padding: 0;
@@ -12,20 +21,20 @@
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
-    background: linear-gradient(135deg, #f1d0b6, #e1bfa7);
+    background: linear-gradient(135deg, #e5ba9a, #d5aa9b); /* Slightly darker background gradient */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
     text-align: center;
   }
   
   .card:hover {
-    background-color: #f0c6a6;
+    background-color: #e5b09a; /* Slightly darker hover background color */
   }
   
   .card h3 {
     margin: 0;
     font-size: 24px;
-    color: #fff;
+    color: #f7f7f7; /* Slightly darker text color */
     font-weight: bold;
     text-transform: uppercase;
   }
@@ -33,12 +42,12 @@
   .card p {
     margin: 10px 0 0;
     font-size: 16px;
-    color: #fff;
+    color: #f7f7f7; /* Slightly darker text color */
   }
   
   .list-heading {
-    background: linear-gradient(135deg, #d9b39e, #c49b8c);
-    color: #fff;
+    background: linear-gradient(135deg, #bfa48e, #ac8d7a); /* Slightly darker heading background gradient */
+    color: #f7f7f7; /* Slightly darker heading text color */
     padding: 10px;
     border-radius: 5px;
     font-size: 24px;
@@ -46,7 +55,7 @@
   }
   
   body {
-    background-color: #ede4db; /* Slightly darker brown color */
+    background-color: #dbd1c7; /* Slightly darker background color */
     margin: 0;
     padding: 0;
   }
@@ -81,6 +90,6 @@
   }
   
   .app header img {
-    max-width: 100%;
+    max-width: 70%;
     height: auto;
   }
