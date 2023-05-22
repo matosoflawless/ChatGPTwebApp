@@ -2,65 +2,72 @@
     max-width: 100%;
     height: auto;
   }
-
-  .list-item {
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    background: linear-gradient(135deg, #f1d0b6, #e1bfa7);
+  
+  .card-list {
     list-style-type: none;
+    padding: 0;
   }
   
-  .list-item h3 {
+  .card {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #f1d0b6, #e1bfa7);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    text-align: center;
+  }
+  
+  .card:hover {
+    background-color: #f0c6a6;
+  }
+  
+  .card h3 {
     margin: 0;
-    font-size: 18px;
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .card p {
+    margin: 10px 0 0;
+    font-size: 16px;
     color: #fff;
   }
   
-  .list-item p {
-    margin: 5px 0 0;
-    font-size: 14px;
-    color: #fff;
-  }
   .list-heading {
     background: linear-gradient(135deg, #d9b39e, #c49b8c);
     color: #fff;
     padding: 10px;
     border-radius: 5px;
     font-size: 24px;
-    
-    margin-bottom: 5;
+    margin-bottom: 20px;
   }
   
-  ul {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   body {
     background-color: #ede4db; /* Slightly darker brown color */
     margin: 0;
     padding: 0;
   }
+  
   /* Responsive Styles */
   
   @media screen and (max-width: 768px) {
-    .list-item {
-      padding: 8px;
-      margin-bottom: 8px;
+    .card {
+      padding: 15px;
+      margin: 15px;
     }
   
-    .list-item h3 {
-      font-size: 16px;
+    .card h3 {
+      font-size: 20px;
     }
   
-    .list-item p {
-      font-size: 12px;
+    .card p {
+      font-size: 14px;
     }
   }
+  
   .app {
     display: flex;
     flex-direction: column;

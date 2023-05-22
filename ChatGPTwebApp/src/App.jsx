@@ -16,7 +16,7 @@ function App() {
     {
       id: 3,
       name: "Rissóis de pizza",
-      description: "Rissóis rechados com todo o sabor de uma pizza tipica Portuguesa",
+      description: "Rissóis recheados com todo o sabor de uma pizza típica Portuguesa",
     },
   ];
 
@@ -27,19 +27,19 @@ function App() {
       </header>
 
       <main>
-      <h2 className="list-heading">Lista de produtos</h2>
-        <ul>
-          
-  {products.map((product) => (
-    <li key={product.id} className="list-item">
-      <h3>{product.name}</h3>
-      <p>{product.description}</p>
-    </li>
-  ))}
-</ul>
+        <h2 className="list-heading">Lista de produtos</h2>
+        <ul className="card-list">
+          {products.map((product) => (
+            <li key={product.id} className="card">
+              <h3>{product.name}</h3>
+              <p>{product.description}</p>
+            </li>
+          ))}
+        </ul>
       </main>
     </div>
   );
 }
 
 export default App;
+
