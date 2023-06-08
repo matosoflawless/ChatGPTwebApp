@@ -21,8 +21,10 @@ function App() {
   const handleOrder = () => {
     // Send email with the cart items
     // Implement your email sending logic here
-    const emailContent = cartItems.map((item) => `${item.name}: ${item.description}`).join('\n');
-    console.log('Email content:', emailContent);
+    const emailContent = cartItems
+      .map((item) => `${item.name}: ${item.description}`)
+      .join("\n");
+    console.log("Email content:", emailContent);
 
     // Clear the cart after placing the order
     setCartItems([]);
@@ -42,7 +44,7 @@ function App() {
     },
     {
       id: 3,
-      name: "Rissóis de pizza",
+      name: "Rissóis de Pizza",
       description: "Rissóis recheados com todo o sabor de uma pizza típica Portuguesa",
     },
   ];
@@ -51,6 +53,7 @@ function App() {
     <div className="app">
       <header>
         <img src="src\images\LOGO SAL E AÇUCAR (1).png" alt="Big Image" className="responsive-image" />
+        <h1>Bem vindo à Sal e Açúcar</h1>
       </header>
 
       <main>
@@ -68,7 +71,7 @@ function App() {
 
       {isCartOpen && (
         <div className="cart-panel">
-          <h2>Cart</h2>
+          <h2>Your Cart</h2>
           {cartItems.length === 0 ? (
             <p>Your cart is empty.</p>
           ) : (
@@ -83,7 +86,7 @@ function App() {
             </ul>
           )}
           <button onClick={handleOrder} disabled={cartItems.length === 0}>
-            Encomendar
+            Place Order
           </button>
         </div>
       )}
