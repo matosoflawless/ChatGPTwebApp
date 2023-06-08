@@ -1,9 +1,35 @@
 .responsive-image {
-    max-width: 60%;
-    height: auto;
-  }
-  
- .cart-panel {
+  max-width: 60%;
+  height: auto;
+}
+
+button {
+  background-color: #4d3522; /* Button background color */
+  color: #f7f7f7; /* Button text color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px; /* Add margin at the top of the button */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+button:hover {
+  background-color: #ac8d7a; /* Button background color on hover */
+}
+
+button:disabled {
+  background-color: #d5d5d5; /* Button background color when disabled */
+  cursor: not-allowed;
+}
+
+h1 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.cart-panel {
   position: fixed;
   background-color: #f3e8c9;
   padding: 20px;
@@ -15,85 +41,108 @@
   margin: 0 auto;
   right: 20px;
   bottom: 20px;
+  overflow-y: auto;
+  max-height: 400px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-  .card-list {
-    list-style-type: none;
-    padding: 0;
-  }
+
+.card-list {
+  list-style-type: none;
+  padding: 20px;
   
-  .card {
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, #e5ba9a, #d5aa9b); /* Slightly darker background gradient */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-    text-align: center;
-  }
+}
+
+.card {
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #e5ba9a, #d5aa9b); /* Slightly darker background gradient */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  text-align: center;
   
-  .card:hover {
-    background-color: #e5b09a; /* Slightly darker hover background color style */
-  }
+}
+
+.card:hover {
+  background-color: #e5b09a; /* Slightly darker hover background color style */
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 24px;
+  color: #f7f7f7; /* Slightly darker text color */
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   
-  .card h3 {
+}
+
+.card p {
+  margin: 10px 0 0;
+  font-size: 16px;
+  color: #f7f7f7; /* Slightly darker text color */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.list-heading {
+  background: linear-gradient(135deg, #bfa48e, #ac8d7a); /* Slightly darker heading background gradient */
+  color: #f7f7f7; /* Slightly darker heading text color */
+  padding: 30px;
+  border-radius: 5px;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  background-color: #dbd1c7; /* Slightly darker background color */
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsive Styles */
+
+@media screen and (max-width: 768px) {
+  .cart-panel {
+    position: static;
+    width: 100%;
+    max-width: 100%;
     margin: 0;
-    font-size: 24px;
-    color: #f7f7f7; /* Slightly darker text color */
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-  .card p {
-    margin: 10px 0 0;
-    font-size: 16px;
-    color: #f7f7f7; /* Slightly darker text color */
-  }
-  
-  .list-heading {
-    background: linear-gradient(135deg, #bfa48e, #ac8d7a); /* Slightly darker heading background gradient */
-    color: #f7f7f7; /* Slightly darker heading text color */
+    box-shadow: none;
     padding: 10px;
-    border-radius: 5px;
-    font-size: 24px;
-    margin-bottom: 20px;
+    border-radius: 0;
   }
-  
-  body {
-    background-color: #dbd1c7; /* Slightly darker background color */
-    margin: 0;
-    padding: 0;
+
+  .cart-items-container {
+    max-height: unset;
+    overflow-y: visible;
   }
-  
-  /* Responsive Styles */
-  
-  @media screen and (max-width: 768px) {
-    .card {
-      padding: 15px;
-      margin: 15px;
-    }
-  
-    .card h3 {
-      font-size: 20px;
-    }
-  
-    .card p {
-      font-size: 14px;
-    }
-  }
-  
+
   .app {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    padding-bottom: 80px; /* Adjust padding-bottom value to make space for the cart panel */
   }
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.app header {
+  margin-bottom: 20px;
+}
+
+.app header img {
+  max-width: 70%;
+  height: auto;
+}
+
+.product-list-container {
+  max-height: 400px;
+  overflow-y: auto;
   
-  .app header {
-    margin-bottom: 20px;
-  }
-  
-  .app header img {
-    max-width: 70%;
-    height: auto;
-  }
+}
