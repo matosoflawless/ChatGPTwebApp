@@ -1,34 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
+import HeroTofuForm from "./HeroTofuForm"; // Import the modified HeroTofuForm component
 
 function App() {
-  const [cartItems, setCartItems] = React.useState([]);
-  const [isCartOpen, setCartOpen] = React.useState(false);
+  const [cartItems, setCartItems] = useState([]);
+  const [isCartOpen, setCartOpen] = useState(false);
 
-  // Function to add a product to the cart
   const addToCart = (product) => {
     setCartItems([...cartItems, product]);
-    setCartOpen(true); // Open the cart panel when adding items
+    setCartOpen(true);
   };
 
-  // Function to remove a product from the cart
   const removeFromCart = (product) => {
     const updatedCartItems = cartItems.filter((item) => item.id !== product.id);
     setCartItems(updatedCartItems);
   };
 
-  // Function to handle the "Encomendar" button click
-  const handleOrder = () => {
-    // Send email with the cart items
-    // Implement your email sending logic here
-    const emailContent = cartItems
-      .map((item) => `${item.name}: ${item.description}`)
-      .join("\n");
+  const handleOrder = (emailContent) => {
+    // Here, you can use your email sending logic
+    // This example logs the email content to the console
     console.log("Email content:", emailContent);
 
     // Clear the cart after placing the order
     setCartItems([]);
-    setCartOpen(false); // Close the cart panel after placing the order
+    setCartOpen(false);
   };
 
   const products = [
@@ -55,7 +50,7 @@ function App() {
         <img src="src\images\LOGO SAL E AÇUCAR (1).png" alt="Big Image" className="responsive-image" />
         <h1>Bem vindo à Sal e Açúcar</h1>
       </header>
-
+  
       <main>
         <h2 className="list-heading">Lista de produtos</h2>
         <ul className="card-list">
@@ -68,7 +63,7 @@ function App() {
           ))}
         </ul>
       </main>
-
+  
       {isCartOpen && (
         <div className="cart-panel">
           <h2>Your Cart</h2>
@@ -85,9 +80,8 @@ function App() {
               ))}
             </ul>
           )}
-          <button onClick={handleOrder} disabled={cartItems.length === 0}>
-            Place Order
-          </button>
+          {/* Pass the handleOrder function to the HeroTofuForm */}
+          <HeroTofuForm handleOrder={handleOrder} cartItems={cartItems} />
         </div>
       )}
     </div>
